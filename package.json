@@ -101,15 +101,16 @@
   },
   "homepage": "https://famo.us",
   "devDependencies": {
-    "cssify": "^0.6.0",
-    "deamdify": "^0.1.1",
     "eslint": "^0.10.0",
+    "famous-dist-generator": "^0.3.0",
     "famous-doc-generator": "^0.7.0",
     "famous-examples-generator": "^0.2.1",
-    "famous-dist-generator": "^0.3.0",
     "jscs": "^1.5.9"
   },
-
+  "dependencies": {
+    "cssify": "^0.6.0",
+    "deamdify": "^0.1.1"
+  },
   "browserify": {
     "transform": [
       "cssify",
