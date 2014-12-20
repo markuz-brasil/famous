@@ -9,19 +9,22 @@
   "keywords": [
     "famous"
   ],
+  "main": "commonjs/index.js",
   "scripts": {
     "test": "npm run lint -s",
     "lint-eslint": "eslint src/",
     "lint-jscs": "jscs src/",
     "lint": "npm run lint-eslint && npm run lint-jscs",
-    "build": "npm run build-requirejs && npm run build-requirejs-min && npm run build-global && npm run build-global-min && npm run build-css",
+    "build": "npm run build-commonjs && npm run build-requirejs && npm run build-requirejs-min && npm run build-global && npm run build-global-min && npm run build-css",
+    "build-commonjs": "famous-dist-generator --commonjs --local --out commonjs/.",
     "build-requirejs": "famous-dist-generator --requirejs --local --out dist/famous.js",
     "build-requirejs-min": "famous-dist-generator --requirejs --local --minify --out dist/famous.min.js",
     "build-global": "famous-dist-generator --standalone --local --out dist/famous-global.js",
     "build-global-min": "famous-dist-generator --standalone --local --minify --out dist/famous-global.min.js",
     "build-css": "famous-dist-generator --css --local --out dist/famous.css",
     "build-docs": "famous-doc-generator --base src/ --out docs/ --createIndex",
-    "build-examples": "famous-examples-generator -i ./examples"
+    "build-examples": "famous-examples-generator -i ./examples",
+    "postinstall": "npm run build"
   },
   "authors": [
     "Adam Cmiel <adam@famo.us>",
@@ -100,14 +103,14 @@
   "homepage": "https://famo.us",
   "devDependencies": {
     "eslint": "^0.10.0",
-    "famous-dist-generator": "^0.3.0",
     "famous-doc-generator": "^0.7.0",
     "famous-examples-generator": "^0.2.1",
     "jscs": "^1.5.9"
   },
   "dependencies": {
     "cssify": "^0.6.0",
-    "deamdify": "^0.1.1"
+    "deamdify": "^0.1.1",
+    "famous-dist-generator": "^0.3.0"
   },
   "browserify": {
     "transform": [
