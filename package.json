@@ -23,7 +23,8 @@
     "build-global-min": "famous-dist-generator --standalone --local --minify --out dist/famous-global.min.js",
     "build-css": "famous-dist-generator --css --local --out dist/famous.css",
     "build-docs": "famous-doc-generator --base src/ --out docs/ --createIndex",
-    "build-examples": "famous-examples-generator -i ./examples"
+    "build-examples": "famous-examples-generator -i ./examples",
+    "prepublish": "npm run build"
   },
   "authors": [
     "Adam Cmiel <adam@famo.us>",
